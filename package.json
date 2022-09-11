@@ -1,5 +1,9 @@
 {
   "name": "challenge_leadster",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^5.2.1",
+    "jquery": "^3.6.1",
+    "popper.js": "^1.16.1"
+  }
 }
