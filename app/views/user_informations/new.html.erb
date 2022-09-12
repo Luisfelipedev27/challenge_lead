@@ -1,0 +1,119 @@
+<div class='container'>
+    <h1>New User Information</h1>
+
+<%= render 'form', user_information: @user_information %>
+
+<%= link_to 'Back', user_informations_path %>
+
+<body>
+    <br>
+	<fieldset>
+		<legend><h1>Consult Zip code</h1></legend>
+        
+			<form  id='form-contato' enctype='multipart/form-data' class="border shadow-sm rounded p-3 mb-3">		    
+ 
+				<div class="row">
+			  		<div class="col-md-2">
+					   	<div class="form-group">
+					        <label>ZIP Code</label>
+			      			<input type="text" class="form-control pula" id="cep" maxlength="12" name="cep" placeholder="Inform the zip code">
+					    </div>
+			  		</div>
+			  		<div class="col-md-8">
+					   <div class="form-group">
+					       <label>Street <span>*</span> <span id='mensagem'></span></label>
+			      		   <input type="text" class="form-control pula" id="street" name="street" placeholder="Inform the Street" required>
+					    </div>
+			  		</div>
+			  		<div class="col-md-2">
+					   <div class="form-group">
+					       <label>Number</label>
+			      		   <input type="text" class="form-control pula" id="number" name="number" placeholder="Inform the number">
+					    </div>
+			  		</div>
+			  	</div>	
+ 
+			  	<div class="row">
+			  		<div class="col-md-3">
+					    <div class="form-group">
+					        <label>District</label>
+			      			<input type="text" class="form-control pula" id="district" name="district" placeholder="Inform the Neighborhood / District">
+					    </div>
+			  		</div>
+			  		<div class="col-md-3">
+					    <div class="form-group">
+					       <label>City</label>
+			      			<input type="text" class="form-control pula" id="city" name="city" placeholder="Inform the city">
+					    </div>
+			  		</div>
+			  		<div class="col-md-1">
+					   <div class="form-group">
+					        <label>State</label>
+			      			<input type="text" class="form-control pula" id="state" maxlength="2" name="state" placeholder="Inform the State">
+					    </div>
+			  		</div>
+			  	</div>
+ 
+			    <button type="submit" class="btn btn-primary" id='botao'> 
+			      <i class="fa fa-floppy-o"></i> Gravar
+			    </button>
+			</form>
+		</fieldset>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+ 
+		// Método para pular campos teclando ENTER
+	    $('.pula').on('keypress', function(e){
+            var tecla = (e.keyCode?e.keyCode:e.which);
+ 
+	        if(tecla == 13){
+                campo = $('.pula');
+	            indice = campo.index(this);
+ 
+	            if(campo[indice+1] != null){
+                    proximo = campo[indice + 1];
+	                proximo.focus();
+	                e.preventDefault(e);
+	            }
+	        }
+	    });
+ 
+	     // Inseri máscara no CEP
+	    $("#cep").inputmask({
+            mask: ["99999-999",],
+	        keepStatic: true
+	    });
+ 
+	     // Método para consultar o CEP
+		$('#cep').on('blur', function(){
+            
+            if($.trim($("#cep").val()) != ""){
+                
+                $("#mensagem").html('(Wait, consulting zip code...)');
+				$.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val(), function(){
+                    
+                    if(resultadoCEP["resultado"]){
+                        $("#street").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
+						$("#district").val(unescape(resultadoCEP["bairro"]));
+						$("#city").val(unescape(resultadoCEP["cidade"]));
+						$("#state").val(unescape(resultadoCEP["uf"]));
+					}
+ 
+					$("#mensagem").html('');
+				});				
+			}			
+		});
+	});	
+	</script>
+<style type="text/css">
+    input[type='text']{
+    color: black
+                        }
+                           
+ #mensagem{
+     color: red;
+            }
+</style>
