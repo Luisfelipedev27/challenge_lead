@@ -1,3 +1,11 @@
-<div style="justify-content: center; display:flex">
-    <h1> Welcome to Leadster Test</h1>
+<div style="justify-content: center; display:flex; padding-top: 200px">
+    <h1> Welcome to Leadster Test!</h1>    
 </div>
+<div style="justify-content: center; display:flex; gap:20px; padding-top: 50px">
+    <button class="btn btn-primary" style="width: 150px">
+     <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+    </button>
+    <button class="btn btn-primary" style="width: 150px">
+     <%= link_to('Signup', new_user_registration_path, class: "nav-link") %>
+    </button>
+     </div>
