@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1 style="justify-content: center; display:flex"> User Information</h1>
+
+<table class="table table-bordered .table-hover " style="width: 80%; margin-left: 10%;">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Cpf</th>
+      <th scope="col">Email</th>
+      <th scope="col">Date</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_informations.each do |user_information| %>
+      <tr>
+        <td><%= user_information.name %></td>
+        <td><%= user_information.cpf %></td>
+        <td><%= user_information.email %></td>
+        <td><%= user_information.date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+
