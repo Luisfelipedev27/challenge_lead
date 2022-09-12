@@ -1,7 +1,14 @@
 <div>
-  <div class="col-md-6 col-lg-6" style='align-items:center; margin-left:500px'>
-    <table class="table table-sm" style='text-align:center; padding-top:40px'>
-    <h4 style='text-align:center; padding-top:40px'> Accounts to test the app: </h4>
+
+<div style="justify-content: center; display:flex">
+    <h1> Welcome to Leadster Test</h1>
+</div>
+
+
+<div class="col-md-6 col-lg-6" style='align-items:center; margin-left:22%'>
+    <table class="table table-sm" style='text-align:center;'>
+    <h4 style='text-align:center; padding-top:50px; margin-left:10%;'> Accounts to test the app: </h4>
+    <div style="padding-top: 25px;">
       <thead>
         <tr>
           <th scope="col">Email</th>
@@ -18,10 +25,11 @@
       </tbody>
     </table>
   </div>
-  <div class="col-md-6 col-lg-4" style='margin-left: 650px; height: 100px;'>
-<h2 style='text-align:center; padding-top:40px'>Log in</h2>
+</div>
+<div class="col-md-6 col-lg-3" style='margin-left:37%;'>
+  <h2 style='text-align:center; padding-top:40px'>Log in</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "border shadow-sm rounded p-3 mb-3" } ) do |f| %>
-      <div class="form-group ">
+      <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
       </div>
@@ -44,6 +52,7 @@
     <% end %>
 
     <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
 
