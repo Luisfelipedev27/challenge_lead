@@ -11,5 +11,10 @@
 end
 
 150.times do |i|
-    UserInformation.create!(name: "user-#{i+1}", email: "user-#{i+1}@example.com" , cpf: "000.00#{i+1}.000-00", date: "2000-02-21")
+    UserInformation.create!(
+                            name: Faker::Name.name,
+                            email: Faker::Internet.email, 
+                            cpf: Faker::CPF.pretty, 
+                            date: Faker::Date.between(from: '1990-09-23', to: '2002-09-25')
+                           )
 end
