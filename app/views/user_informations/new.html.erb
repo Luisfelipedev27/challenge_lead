@@ -66,43 +66,42 @@
 	$(document).ready(function () {
  
 		// Método para pular campos teclando ENTER
-	    $('.pula').on('keypress', function(e){
-            var tecla = (e.keyCode?e.keyCode:e.which);
+	    $('.pula').on('keypress', function(e){    
+            var tecla = (e.keyCode?e.keyCode:e.which);  
  
-	        if(tecla == 13){
+	        if(tecla == 13){    // 13 -> Enter
                 campo = $('.pula');
-	            indice = campo.index(this);
+	            indice = campo.index(this);    
  
-	            if(campo[indice+1] != null){
-                    proximo = campo[indice + 1];
-	                proximo.focus();
-	                e.preventDefault(e);
+	            if(campo[indice+1] != null){		
+                    proximo = campo[indice + 1];  
+	                proximo.focus();        
+	                e.preventDefault(e); 
 	            }
 	        }
 	    });
  
-	     // Inseri máscara no CEP
 	    $("#cep").inputmask({
             mask: ["99999-999",],
 	        keepStatic: true
 	    });
  
-	     // Método para consultar o CEP
-		$('#cep').on('blur', function(){
+	    
+		$('#cep').on('blur', function(){ 
             
-            if($.trim($("#cep").val()) != ""){
+            if($.trim($("#cep").val()) != ""){  
                 
                 $("#mensagem").html('(Wait, consulting zip code...)');
 				$.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val(), function(){
                     
-                    if(resultadoCEP["resultado"]){
-                        $("#street").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
+                    if(resultadoCEP["resultado"]){  
+                        $("#street").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"])); 
 						$("#district").val(unescape(resultadoCEP["bairro"]));
 						$("#city").val(unescape(resultadoCEP["cidade"]));
 						$("#state").val(unescape(resultadoCEP["uf"]));
 					}
  
-					$("#mensagem").html('');
+					$("#mensagem").html(''); 
 				});				
 			}			
 		});
@@ -111,7 +110,7 @@
 <style type="text/css">
     input[type='text']{
     color: black
-                        }
+                    }
                            
  #mensagem{
      color: red;

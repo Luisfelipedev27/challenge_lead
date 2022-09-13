@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :cpf %>
-    <%= form.text_field :cpf, class: "form-control" %>
+    <%= form.text_field :cpf, class: "form-control" , id: "user_cpf"%>
   </div>
 
   <div class="field">
@@ -31,7 +31,16 @@
     <%= form.date_field :date , class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+ <button type="submit" class="btn btn-primary" id='botao' style='margin-top: 25px'> 
+			      <i class="fa fa-floppy-o"></i> Confirm
+			    </button>
 <% end %>
+
+<script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+<script>
+
+$("#user_cpf").inputmask({
+            mask: ["999.999.999-99",],
+	        keepStatic: true
+	    });
+</script>
