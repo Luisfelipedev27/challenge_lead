@@ -1,10 +1,7 @@
 class UserInformation < ApplicationRecord
-  default_scope { order(created_at: :desc)}
- 
-  
-
+  paginates_per 20
   validates :cpf, :email, uniqueness: true, presence: true
   validates :name, :date, presence: true
-  
 
 end
+

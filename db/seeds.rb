@@ -9,3 +9,7 @@
 2.times do |i|
     User.create(email: "user-#{i+1}@example.com", password: "password", password_confirmation: "password")
 end
+
+150.times do |i|
+    UserInformation.create!(name: "user-#{i+1}", email: "user-#{i+1}@example.com" , cpf: "000.00#{i+1}.000-00", date: "2000-02-21")
+end

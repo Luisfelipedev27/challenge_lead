@@ -3,7 +3,7 @@ class UserInformationsController < ApplicationController
 
   # GET /user_informations or /user_informations.json
   def index
-    @user_informations = UserInformation.all
+    @user_informations = UserInformation.all.page params[:page]
   end
 
   # GET /user_informations/1 or /user_informations/1.json
@@ -25,7 +25,7 @@ class UserInformationsController < ApplicationController
 
     respond_to do |format|
       if @user_information.save
-        format.html { redirect_to user_information_url(@user_information), notice: "User information was successfully created." }
+        format.html { redirect_to user_information_url(@user_information), notice: "User information was successfully add." }
         format.json { render :show, status: :created, location: @user_information }
       else
         format.html { render :new, status: :unprocessable_entity }
