@@ -12,13 +12,16 @@
       <td><%= @user_information.name %></td>
       <td><%= @user_information.cpf %></td>     
       <td><%= @user_information.email%></td>     
-      <td><%= @user_information.date %></td>       
+      <td><%= @user_information.date.strftime('%d/%m/%Y') %></td>       
     </tr>    
   </tbody>
 </table>
-<%= link_to 'Edit', edit_user_information_path(@user_information) %> |
-<%= link_to 'Back', user_informations_path %>
 
+<div style="margin: 15px">
+<%= link_to 'Edit', edit_user_information_path(@user_information), class: "btn btn-primary" %> 
+
+<%= link_to 'Back', user_informations_path , class: "btn btn-primary", style: "margin: 10px"%>
+</div>
 
 
 

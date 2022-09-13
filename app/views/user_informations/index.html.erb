@@ -19,11 +19,17 @@
         <td><%= user_information.name %></td>
         <td><%= user_information.cpf %></td>
         <td><%= user_information.email %></td>
-        <td><%= user_information.date %></td>
+        <td><%= (user_information.date).strftime('%d/%m/%Y') %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<div style="margin-left: 37%">
+<%= paginate @user_informations, theme: 'bootstrap-5',
+                   pagination_class: "pagination-sm flex-wrap"%>
+</div>
 <br>
+
+
 
 

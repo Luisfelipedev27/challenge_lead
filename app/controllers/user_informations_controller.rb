@@ -3,7 +3,7 @@ class UserInformationsController < ApplicationController
 
   # GET /user_informations or /user_informations.json
   def index
-    @user_informations = UserInformation.all
+    @user_informations = UserInformation.all.page params[:page]
   end
 
   # GET /user_informations/1 or /user_informations/1.json
