@@ -19,8 +19,10 @@ gem 'kaminari', '~> 0.17.0'
 gem 'bootstrap5-kaminari-views'
 gem 'cpf_faker'
 gem 'faker'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+gem 'rspec-rails', '~> 4.0.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
