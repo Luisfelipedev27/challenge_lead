@@ -1,0 +1,10 @@
+{
+  "name": "challenge_leadster",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.2.1",
+    "jquery": "^3.6.1",
+    "popper.js": "^1.16.1",
+    "node": "10.x"
+  }
+}
