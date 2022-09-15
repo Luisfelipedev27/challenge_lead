@@ -4,7 +4,7 @@ ruby 2.6.2   rails 5.2.8.1   postgresql 14.5
 
 ##### Execução :
 
-$ rails db:create  rails db:migrate  rails db:seed
+$ rails db:create  $ rails db:migrate  $ rails db:seed
 $ bundle exec rails s
 
 ##### Executar testes:
