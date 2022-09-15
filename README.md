@@ -11,6 +11,7 @@ $ bundle exec rails s
 
 $ rspec  spec/models/user_spec.rb
 $ rspec  spec/models/user_information_spec.rb
+$ rails -c
 
 ###### Considerações
 
@@ -18,6 +19,8 @@ Havia muita coisa que eu queria implementar,principalmente relacionado à autent
 
 Vocẽ pode ver as informações de Usuários cadastrados clicando em Registered Contacts e sair da sua conta clicando em Logout.
 Há 2 Usuários já cadastrados por meio do seed para você ser autenticado. Utilize-os como exemplo.
+
+Você pode ver que no repositório tem + porcentagem pro JS, mas isso é por causa do arquivo "node_modules" , que é bem grande.
 
 
 
