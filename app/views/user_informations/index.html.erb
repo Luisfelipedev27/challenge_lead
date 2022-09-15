@@ -2,11 +2,13 @@
 
 <h1 style="justify-content: center; display:flex; padding-top: 30px"> Users Information</h1>
 <div style="margin-left:70%">
-<form style="display:flex; gap: 8px">
-  <label style="display: block;" for="search">Buscar</label>
-  <input  class="form-control" style="padding: 6px; width: 50%" type="search" id="busca" name="q">
-  <button  class="btn btn-primary" style="padding: 6px">search</button>
-</form>
+
+<div style="width: 80%">
+<%= form_tag(user_informations_path, method: :get, style: "display: flex; gap: 6px ") do %>
+  <%= text_field_tag 'search', nil, placeholder: 'enter username', class: "form-control" %>
+  <%= submit_tag 'Search', class: "btn btn-primary" %>
+<% end %>
+</div>
 </div>
 <hr>
 <table class="table table-bordered .table-hover " style="width: 80%; margin-left: 10%; margin-top:50px">
