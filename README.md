@@ -1,24 +1,23 @@
-# README
+##### Informações :  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ruby 2.6.2 | rails 5.2.8.1 | postgresql 14.5
 
-Things you may want to cover:
+##### Execução :
 
-* Ruby version
+$ bundle install | $ rails db:create | $ rails db:migrate | $ rails db:seed |
+$ bundle exec rails s
 
-* System dependencies
+##### Executar testes:
 
-* Configuration
+$ rspec  spec/models/user_spec.rb
+$ rspec  spec/models/user_information_spec.rb
 
-* Database creation
+###### Considerações
 
-* Database initialization
+Havia muita coisa que eu queria implementar,principalmente relacionado à autenticação de usuário e ao CEP, mas pela falta de tempo por causa das demandas dos serviços, não pude implementar.
 
-* How to run the test suite
+Vocẽ pode ver as informações de Usuários cadastrados clicando em Registered Contacts e sair da sua conta clicando em Logout.
+Há 2 Usuários já cadastrados por meio do seed para você ser autenticado. Utilize-os como exemplo.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
