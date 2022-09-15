@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :user_information, dependent: :destroy #Se um user for escolhido , suas informações também serão 
-
 end
 
 
