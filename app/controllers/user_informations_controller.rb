@@ -3,7 +3,11 @@ class UserInformationsController < ApplicationController
 
   # GET /user_informations or /user_informations.json
   def index
-    @user_informations = UserInformation.all.page params[:page]
+    if params[:search]
+      @user_informations = UserInformation.where("name like ?", "%#{params[:search]}%").page params[:page]
+    else
+      @user_informations = UserInformation.all.page params[:page]
+    end
   end
 
   # GET /user_informations/1 or /user_informations/1.json
