@@ -22,5 +22,6 @@ Há 2 Usuários já cadastrados por meio do seed para você ser autenticado. Uti
 
 Você pode ver que no repositório tem + porcentagem pro JS, mas isso é por causa do arquivo "node_modules" , que é bem grande.
 
+APP no Heroku : https://calm-anchorage-54210.herokuapp.com
 
 
