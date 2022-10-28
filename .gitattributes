@@ -1,3 +1,1 @@
-* linguist-vendored
-*.javascript linguist-vendored=false
 *.ruby linguist-detectable=true
